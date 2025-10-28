@@ -1,43 +1,82 @@
 button {
-    font-family: "Bricolage Grotesque", sans-serif;
-    border: none;
-    background-color: #f44336;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.5s ease;
+  font-family: "Bricolage Grotesque", sans-serif;
+  background-color: #e91e63;
+  padding: 10px;
+  border-radius: 4px;
+  transition: 0.1s ease-out;
+  height: 60px;
+  font-size: 30px;
+  border: 2px solid black;
+  box-shadow: 6px 6px 0 black;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(255, 85, 0);
+}
+button:active {
+  box-shadow: 4px 4px 0 black;
+  transform: translate(2px, 2px);
+  background-color: orange;
 }
 
-#calculator #calculator-keyboard {
-    justify-content: space-between;
-    margin-bottom: 30px;
+input {
+  width: 100%;
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 30px;
 }
 
-#calculator #calculator-keyboard button {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    height: 60px;
-    font-size: 30px;
-    border: 2px solid black;
-    box-shadow: 8px 8px 0 black;
+#calculator .calculator-keyboard {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom: 30px;
+}
+#calculator .calculator-keyboard button {
+  width: 60px;
+}
+#calculator .calculator-keyboard .operators {
+  display: flex;
+  flex-direction: column;
+}
+#calculator .calculator-keyboard .operators button {
+  background-color: #e6ffc2;
+  margin-bottom: 13px;
+  transition: 0.1s ease-out;
+}
+#calculator .calculator-keyboard .operators button:active {
+  box-shadow: 4px 4px 0 black;
+  transform: translate(2px, 2px);
+  background-color: orange;
+}
+#calculator .calculator-keyboard .effacer {
+  width: auto;
 }
 
-#calculator #calculator-keyboard #operators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 30px;
+.multiplier-container {
+  position: relative;
 }
-#calculator #calculator-keyboard #operators button {
-    width: 60px;
-    height: 60px;
+.multiplier-container .multiplier {
+  font-size: 40px;
+  position: absolute;
+  top: 15px;
+  left: 20px;
 }
-#multiplier {
-    padding-top: 5px;
-    padding-top: 19px;
-    font-size: 40px;
-}
+
 #add {
-    padding-bottom: 3px;
+  padding-bottom: 3px;
 }
+
+#calculator-screen {
+  height: 60px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.row {
+  margin-bottom: 13px;
+}
+.row button {
+  margin-right: 5px;
+}/*# sourceMappingURL=buttons.css.map */

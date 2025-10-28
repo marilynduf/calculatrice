@@ -1,0 +1,78 @@
+button {
+    font-family: "Bricolage Grotesque", sans-serif;
+    background-color: #e91e63;
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.1s ease-out;
+    height: 60px;
+    font-size: 30px;
+    border: 2px solid black;
+    box-shadow: 6px 6px 0 black;
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(255, 85, 0);
+    }
+    &:active {
+        box-shadow: 4px 4px 0 black;
+        transform: translate(2px, 2px);
+        background-color: orange;
+    }
+}
+input {
+    width: 100%;
+    border: 2px solid;
+    border-radius: 4px;
+    font-size: 30px;
+}
+#calculator {
+    .calculator-keyboard {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-bottom: 30px;
+        button {
+            width: 60px;
+        }
+        .operators {
+            display: flex;
+            flex-direction: column;
+            button {
+                background-color: #e6ffc2;
+                margin-bottom: 13px;
+                transition: 0.1s ease-out;
+                &:active {
+                    box-shadow: 4px 4px 0 black;
+                    transform: translate(2px, 2px);
+                    background-color: orange;
+                }
+            }
+        }
+        .effacer {
+            width: auto;
+        }
+    }
+}
+.multiplier-container {
+    position: relative;
+    .multiplier {
+        font-size: 40px;
+        position: absolute;
+        top: 15px;
+        left: 20px;
+    }
+}
+#add {
+    padding-bottom: 3px;
+}
+#calculator-screen {
+    height: 60px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.row {
+    margin-bottom: 13px;
+    button {
+        margin-right: 5px;
+    }
+}

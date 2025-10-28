@@ -1,33 +1,40 @@
 body {
-    margin: 50px;
-    display: flex;
-    font-family: "Bricolage Grotesque", sans-serif;
-    justify-content: center; /* Centrage horizontal */
-    align-items: center;
+  margin: 50px;
+  display: flex;
+  font-family: "Bricolage Grotesque", sans-serif;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center;
+  background-color: #e6ffc2;
 }
+
 section {
-    background-color: rgb(230, 255, 194);
-    padding: 30px;
-    margin: auto;
-    text-align: center;
+  background-color: rgb(230, 255, 194);
+  padding: 30px;
+  margin: auto;
+  text-align: center;
 }
+
 .originalBox {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 260px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
 #title {
-    margin-top: 0px;
-    text-align: center;
+  font-size: 50px;
+  font-weight: 400;
+  margin-top: 0px;
+  text-align: center;
 }
 
 .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}/*# sourceMappingURL=style.css.map */
