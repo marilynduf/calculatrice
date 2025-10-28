@@ -1,0 +1,43 @@
+button {
+    font-family: "Bricolage Grotesque", sans-serif;
+    border: none;
+    background-color: #f44336;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+#calculator #calculator-keyboard {
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#calculator #calculator-keyboard button {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 60px;
+    font-size: 30px;
+    border: 2px solid black;
+    box-shadow: 8px 8px 0 black;
+}
+
+#calculator #calculator-keyboard #operators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+#calculator #calculator-keyboard #operators button {
+    width: 60px;
+    height: 60px;
+}
+#multiplier {
+    padding-top: 5px;
+    padding-top: 19px;
+    font-size: 40px;
+}
+#add {
+    padding-bottom: 3px;
+}
