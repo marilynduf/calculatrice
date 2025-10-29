@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+            rel="stylesheet"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>calculator-app</title>
     </head>
@@ -13,41 +16,51 @@
         <h1 id="title">Calculatrice funky pas faite pour les épileptiques</h1>
         <section class="originalBox">
             <div id="calculator">
-                <input id="calculator-screen" type="number" />
+                <!-- <input  type="number" /> -->
+                <div class="expression"></div>
+                <div id="calculator-screen"></div>
                 <div class="calculator-keyboard">
                     <div class="operators">
-                        <button>
-                            <span id="add">+</span></span>
-                        </button>
-                        <button><span>—</span></button>
-                        <button class="multiplier-container">
-                            <span class="multiplier">*</span>
-                        </button>
-                        <button><span>/</span></button>
-                        <button><span>=</span></button>
+                        <button value="+">+</button>
+                        <button value="-">-</button>
+                        <button value="*" class="multiplier">*</button>
+                        <button value="/">/</button>
                     </div>
                     <div>
-                        <div class="row">
-                            <button><span>7</span></button>
-                            <button><span>8</span></button>
-                            <button><span>9</span></button>
+                        <div class="numbers">
+                            <div class="row">
+                                <button value="7">7</button>
+                                <button value="8">8</button>
+                                <button value="9">9</button>
+                            </div>
+                            <div class="row">
+                                <button value="4">4</button>
+                                <button value="5">5</button>
+                                <button value="6">6</button>
+                            </div>
+                            <div class="row">
+                                <button value="1">1</button>
+                                <button value="2">2</button>
+                                <button value="3">3</button>
+                            </div>
                         </div>
-                        <div class="row">
-                            <button><span>4</span></button>
-                            <button><span>5</span></button>
-                            <button><span>6</span></button>
+                        <div class="row"><button value="0">0</button></div>
+                        <div class="results">
+                            <button value="effacer" class="effacer">
+                                Effacer
+                            </button>
+                            <button class="equal" value="=">=</button>
+                            <button class="BS" value="=">
+                                <img
+                                    src="./src/images/BS-arrow.svg"
+                                    alt="flèche retour arrière"
+                                />
+                            </button>
                         </div>
-                        <div class="row">
-                            <button><span>1</span></button>
-                            <button><span>2</span></button>
-                            <button><span>3</span></button>
-                        </div>
-                        <button><span>0</span></button>
-                        <button class="effacer"><span>Effacer</span></button>
                     </div>
                 </div>
             </div>
-            <button id="button">click me</button>
+            <button id="button">click moé!</button>
         </section>
     </body>
     <script type="module" src="/src/scripts/main.js"></script>

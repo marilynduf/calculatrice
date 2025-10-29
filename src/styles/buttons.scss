@@ -1,3 +1,6 @@
+$hoverColor: rgb(255, 85, 0);
+$activeColor: yellow;
+
 button {
     font-family: "Bricolage Grotesque", sans-serif;
     background-color: #e91e63;
@@ -10,19 +13,26 @@ button {
     box-shadow: 6px 6px 0 black;
     cursor: pointer;
     &:hover {
-        background-color: rgb(255, 85, 0);
+        background-color: $hoverColor;
     }
     &:active {
         box-shadow: 4px 4px 0 black;
         transform: translate(2px, 2px);
-        background-color: orange;
+        background-color: yellow;
     }
 }
-input {
+#calculator-screen {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     width: 100%;
-    border: 2px solid;
     border-radius: 4px;
-    font-size: 30px;
+    font-size: 40px;
+    height: 60px;
+    padding-bottom: 5px;
+    overflow: auto;
+    //border: 2px solid;
+    //background-color: #fcfff7;
 }
 #calculator {
     .calculator-keyboard {
@@ -40,10 +50,13 @@ input {
                 background-color: #e6ffc2;
                 margin-bottom: 13px;
                 transition: 0.1s ease-out;
+                &:hover {
+                    background-color: $hoverColor;
+                }
                 &:active {
                     box-shadow: 4px 4px 0 black;
                     transform: translate(2px, 2px);
-                    background-color: orange;
+                    background-color: $activeColor;
                 }
             }
         }
@@ -52,23 +65,27 @@ input {
         }
     }
 }
-.multiplier-container {
-    position: relative;
-    .multiplier {
-        font-size: 40px;
-        position: absolute;
-        top: 15px;
-        left: 20px;
-    }
+
+.multiplier {
+    padding-top: 17px;
 }
+
 #add {
     padding-bottom: 3px;
 }
-#calculator-screen {
-    height: 60px;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    box-sizing: border-box;
+.equal {
+    background-color: #e6ffc2;
+}
+.expression {
+    text-align: right;
+    font-size: 18px;
+    width: 100%;
+    height: 20px;
+}
+.BS {
+    img {
+        width: 35px;
+    }
 }
 .row {
     margin-bottom: 13px;

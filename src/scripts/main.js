@@ -1,5 +1,6 @@
-import "./styles/style.css";
-import "./styles/buttons.css";
+import "../styles/style.css";
+import "../styles/buttons.css";
+
 import createRandomColor from "./getCustomColor";
 import getContrastingColor from "./getContrastingColor";
 
@@ -8,12 +9,54 @@ const button = document.querySelector("#button");
 const originalBox = document.querySelector(".originalBox");
 const body = document.querySelector("#app");
 
+// Fonctions calculatrices
+const expressionScreen = document.querySelector(".expression");
+const calculatorScreen = document.getElementById("calculator-screen");
+const numbersButtons = document.querySelectorAll(".numbers button");
+const resetButton = document.querySelector(".effacer");
+const equalButton = document.querySelector(".equal");
+
+/* Affiche les nombres et opérateurs choisis par le user à l'écran */
+function afficheEcran(expression) {
+    calculatorScreen.innerText += expression;
+}
+
+let nombre = null;
+numbersButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        nombre = e.target.value;
+        afficheEcran(nombre);
+    });
+});
+
+const operators = document.querySelectorAll(".operators button");
+operators.forEach((operator) => {
+    operator.addEventListener("click", (e) => {
+        if (!calculatorScreen.innerText) {
+            calculatorScreen.innerText += `0${e.target.value}`;
+            return;
+        }
+        calculatorScreen.innerText += e.target.value;
+    });
+});
+
+// RESET Écrans
+resetButton.addEventListener("click", () => {
+    calculatorScreen.innerText = "";
+    expressionScreen.innerText = "";
+});
+
+equalButton.addEventListener("click", () => {
+    console.log(calculatorScreen.innerText);
+    expressionScreen.innerText = calculatorScreen.innerText;
+});
+
+// Couleurs funky et boîtes
 function createRandomHslNumbers() {
     const hue = Math.floor(Math.random() * 360);
     const lightness = Math.floor(Math.random() * 100);
     return [hue, 100, lightness];
 }
-
 function addNewbox(width, height, clicks) {
     const newBox = document.createElement("div");
     newBox.classList.add("box");
@@ -38,7 +81,6 @@ const MAX = 15;
 
 button.addEventListener("click", () => {
     countClick += 1;
-
     originalBox.style.backgroundColor = createRandomColor();
     title.style.color = createRandomColor();
     const [h, s, l] = createRandomHslNumbers();
