@@ -62,6 +62,10 @@ function handleUserInput(userInput) {
             calculatorScreen.textContent = "0";
         } else effaceDerniereToucheEntree();
     }
+    if (userInput === "effacer") {
+        calculatorScreen.textContent = "0";
+        completedExpressionScreen.textContent = "";
+    }
 }
 
 window.addEventListener("keydown", (e) => {
