@@ -20,6 +20,11 @@ button {
         transform: translate(2px, 2px);
         background-color: yellow;
     }
+    &.keydown-active {
+        box-shadow: 4px 4px 0 black;
+        transform: translate(2px, 2px);
+        background-color: yellow;
+    }
 }
 #calculator-screen {
     display: flex;
@@ -58,6 +63,11 @@ button {
                     transform: translate(2px, 2px);
                     background-color: $activeColor;
                 }
+                &.keydown-active {
+                    box-shadow: 4px 4px 0 black;
+                    transform: translate(2px, 2px);
+                    background-color: yellow;
+                }
             }
         }
         .effacer {
@@ -88,7 +98,7 @@ button {
     }
 }
 .row {
-    margin-bottom: 13px;
+    margin-bottom: 10px;
     button {
         margin-right: 5px;
     }
