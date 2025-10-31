@@ -24,11 +24,17 @@ button.keydown-active {
   background-color: yellow;
 }
 
+.screen-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 #screen {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
   border-radius: 4px;
   font-size: 40px;
   height: 60px;
