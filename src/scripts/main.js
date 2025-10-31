@@ -67,7 +67,7 @@ function handleUserInput(userInput) {
     }
 }
 
-function inputNormalization(key) {
+function inputKeyNormalization(key) {
     if (key === "Enter") {
         return "=";
     }
@@ -75,15 +75,27 @@ function inputNormalization(key) {
         return "BS";
     } else return key;
 }
+
+function isAllowedKeys(key) {
+    const allowedKeys = "0123456789+-*/=";
+    const isKeyAllowed = allowedKeys.includes(key);
+    if (isKeyAllowed || key === "=" || key === "BS") {
+        return true;
+    } else return false;
+}
 window.addEventListener("keydown", (e) => {
-    const key = inputNormalization(e.key);
+    const key = inputKeyNormalization(e.key);
+    if (!isAllowedKeys(key)) return;
+    if (e.repeat) return; // Empeche la touche de rester "stick" sur le clavier
     const button = document.querySelector(`[data-val="${key}"]`);
     button.classList.add("keydown-active");
     handleUserInput(key);
 });
 
 window.addEventListener("keyup", (e) => {
-    const key = inputNormalization(e.key);
+    const key = inputKeyNormalization(e.key);
+    if (!isAllowedKeys(key)) return;
+    if (e.repeat) return; //Empeche la touche de rester "stick" sur le clavier
     const button = document.querySelector(`[data-val="${key}"]`);
     button.classList.remove("keydown-active");
 });
