@@ -67,23 +67,25 @@ function handleUserInput(userInput) {
     }
 }
 
+function inputNormalization(key) {
+    if (key === "Enter") {
+        return "=";
+    }
+    if (key === "Backspace") {
+        return "BS";
+    } else return key;
+}
 window.addEventListener("keydown", (e) => {
-    // console.log(e);
-    let key = e.key;
-    if (e.key === "Enter") {
-        key = "=";
-    }
-    if (e.key === "Backspace") {
-        key = "BS";
-    }
-    let button = document.querySelector(`[data-val="${key}"]`);
+    const key = inputNormalization(e.key);
+    const button = document.querySelector(`[data-val="${key}"]`);
     button.classList.add("keydown-active");
     handleUserInput(key);
 });
 
 window.addEventListener("keyup", (e) => {
-    let allo = document.querySelector(`[data-val="${e.key}"]`);
-    allo.classList.remove("keydown-active");
+    const key = inputNormalization(e.key);
+    const button = document.querySelector(`[data-val="${key}"]`);
+    button.classList.remove("keydown-active");
 });
 
 buttons.forEach((button) => {
