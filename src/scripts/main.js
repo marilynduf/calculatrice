@@ -8,13 +8,12 @@ import "./funkyBoxes";
   et quon ajoute un opérateur, on remplace l'ancien opérateur (last elem) par le nouveau 
 */
 
-// Fonctions calculatrices
-const completedExpressionScreen = document.querySelector(".expression");
-const calculatorScreen = document.getElementById("calculator-screen");
-const numbersButtons = document.querySelectorAll("button");
+const screen = document.getElementById("screen"); // Balise html qui affiche les inputs du user
+const littleScreen = document.getElementById("little-screen"); // Balise html qui affiche l'espression entrée par le user (quand "=" est cliqué)
+const buttons = document.querySelectorAll("button");
+screen.textContent = "0";
 
-calculatorScreen.textContent = "0";
-
+// Fonctions Utilitaires :
 /* Vérifie si la valeur entrée est un nombre */
 const isNumber = (val) => /[0-9]/.test(val);
 /* Vérifie si la valeur entrée est un opérateur valide de la calculatrice */
@@ -22,19 +21,19 @@ const isOperator = (val) => /^[/*+\-]$/.test(val);
 /* Vérifie si le dernier caractere est un operateur */
 const isLastOperator = (val) => isOperator(val[val.length - 1]);
 /* Affiche les nombres et opérateurs choisis par le user à l'écran */
-function afficheEcran(expression) {
-    calculatorScreen.textContent += expression;
+function displayInputs(expression) {
+    screen.textContent += expression;
 }
 function effaceDerniereToucheEntree() {
-    const screenValue = calculatorScreen.textContent;
-    calculatorScreen.textContent = screenValue.slice(0, -1);
+    const screenValue = screen.textContent;
+    screen.textContent = screenValue.slice(0, -1);
 }
 
 function handleUserInput(userInput) {
-    const content = calculatorScreen.textContent;
+    const content = screen.textContent;
     if (isNumber(userInput) && content.length <= 1 && content === "0") {
-        calculatorScreen.textContent = "";
-        afficheEcran(userInput);
+        screen.textContent = "";
+        displayInputs(userInput);
         return;
     }
 
@@ -46,25 +45,25 @@ function handleUserInput(userInput) {
     }
 
     if (isNumber(userInput) || isOperator(userInput)) {
-        afficheEcran(userInput);
+        displayInputs(userInput);
         return;
     }
     if (userInput === "=") {
         if (isLastOperator(content)) return;
         // si expression ne contient pas d'operateir -> return
         if (/[/*+\-]/.test(content)) {
-            completedExpressionScreen.textContent = content;
+            littleScreen.textContent = content;
         } else return;
     }
 
     if (userInput === "BS") {
         if (content.length <= 1) {
-            calculatorScreen.textContent = "0";
+            screen.textContent = "0";
         } else effaceDerniereToucheEntree();
     }
     if (userInput === "effacer") {
-        calculatorScreen.textContent = "0";
-        completedExpressionScreen.textContent = "";
+        screen.textContent = "0";
+        littleScreen.textContent = "";
     }
 }
 
@@ -87,7 +86,7 @@ window.addEventListener("keyup", (e) => {
     allo.classList.remove("keydown-active");
 });
 
-numbersButtons.forEach((button) => {
+buttons.forEach((button) => {
     button.addEventListener("click", () => {
         handleUserInput(button.dataset.val);
     });

@@ -26,7 +26,7 @@ button {
         background-color: yellow;
     }
 }
-#calculator-screen {
+#screen {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -36,8 +36,6 @@ button {
     height: 60px;
     padding-bottom: 5px;
     overflow: auto;
-    //border: 2px solid;
-    //background-color: #fcfff7;
 }
 #calculator {
     .calculator-keyboard {
@@ -86,7 +84,7 @@ button {
 .equal {
     background-color: #e6ffc2;
 }
-.expression {
+#little-screen {
     text-align: right;
     font-size: 18px;
     width: 100%;
