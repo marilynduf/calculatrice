@@ -66,7 +66,7 @@ function handleUserInput(userInput) {
                 Math.abs(resultat) >= 1e10 ||
                 Math.abs(resultat) < 1e-6
             ) {
-                screen.textContent = resultat.toExponential(4);
+                screen.textContent = resultat.toExponential(0);
             } else screen.textContent = eval(resultat);
         } else return;
     }
