@@ -2,6 +2,13 @@ import "../styles/style.css";
 import "../styles/buttons.css";
 import "./funkyBoxes";
 
+/*
+TODO : Supprimer the "funky" part 
+TODO : Afficher msg quand user atteint 10 input de suite
+TODO : Ajuster font-size input
+TODO : Mettre css et scss dans differents dossiers
+*/
+
 const screen = document.getElementById("screen"); // Balise html qui affiche les inputs du user
 const littleScreen = document.getElementById("little-screen"); // Balise html qui affiche l'espression entrée par le user (quand "=" est cliqué)
 const buttons = document.querySelectorAll("button");
