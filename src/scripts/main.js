@@ -2,12 +2,6 @@ import "../styles/style.css";
 import "../styles/buttons.css";
 import "./funkyBoxes";
 
-/* TODOS :
-- DONE : Si expression = "0" ET que la longueur de l'expression est de 1 ou moins, on remplace par valeur entrée
-- DONE : Si dernier élément de l'expression se termine par un opérateur 
-  et quon ajoute un opérateur, on remplace l'ancien opérateur (last elem) par le nouveau 
-*/
-
 const screen = document.getElementById("screen"); // Balise html qui affiche les inputs du user
 const littleScreen = document.getElementById("little-screen"); // Balise html qui affiche l'espression entrée par le user (quand "=" est cliqué)
 const buttons = document.querySelectorAll("button");
@@ -21,25 +15,21 @@ const isOperator = (val) => /^[/*+\-]$/.test(val);
 /* Vérifie si le dernier caractere est un operateur */
 const isLastOperator = (val) => isOperator(val[val.length - 1]);
 /* Affiche les nombres et opérateurs choisis par le user à l'écran */
-function displayInputs(expression) {
-    screen.textContent += expression;
-}
-function RemoveLastKeyEntered() {
+const displayInputs = (expression) => (screen.textContent += expression);
+const removeLastKeyEntered = () => {
     const screenValue = screen.textContent;
     screen.textContent = screenValue.slice(0, -1);
-}
+};
 
 function handleUserInput(userInput) {
     const content = screen.textContent;
-    // si input est un chiffre ET que la  moin ET que la valeur du seul, on ajoute le input
     /**
-     * Logique métier :
+     * Logique :
      * - Si input est un chiffre ET
      * - Si longueur chaîne est égale à 1 ou moins
      * - Si content est égal à 0
      * - Résultat → Affiche userInput
      */
-
     if (isNumber(userInput)) {
         if (content.length <= 1 && content === "0") {
             screen.textContent = "";
@@ -55,7 +45,7 @@ function handleUserInput(userInput) {
             if (lastCaracter === userInput) {
                 return;
             } else {
-                RemoveLastKeyEntered();
+                removeLastKeyEntered();
                 displayInputs(userInput);
             }
         } else displayInputs(userInput);
@@ -69,14 +59,22 @@ function handleUserInput(userInput) {
         if (/[/*+\-]/.test(content)) {
             littleScreen.textContent = content;
             const resultat = eval(content);
-            screen.textContent = eval(resultat);
+            const str = resultat.toString();
+            console.log(str.length);
+            if (
+                str.length > 12 ||
+                Math.abs(resultat) >= 1e10 ||
+                Math.abs(resultat) < 1e-6
+            ) {
+                screen.textContent = resultat.toExponential(4);
+            } else screen.textContent = eval(resultat);
         } else return;
     }
 
     if (userInput === "Backspace") {
         if (content.length <= 1) {
             screen.textContent = "0";
-        } else RemoveLastKeyEntered();
+        } else removeLastKeyEntered();
         return;
     }
     if (userInput === "effacer") {
@@ -112,7 +110,6 @@ window.addEventListener("keyup", (e) => {
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        console.log(button.dataset.val);
         handleUserInput(button.dataset.val);
     });
 });
