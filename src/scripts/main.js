@@ -1,6 +1,6 @@
-import "../styles/style.css";
-import "../styles/buttons.css";
-import "./funkyBoxes";
+import "../styles/style.scss";
+import "../styles/buttons.scss";
+// import "./funkyBoxes";
 
 /*
 TODO : Supprimer the "funky" part 
