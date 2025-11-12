@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "build:sass": "sass src/styles:dist/css --style=compressed",
-    "watch:sass": "sass --watch src/styles:dist/css"
+    "watch:sass": "sass --watch src/styles:dist/css --no-source-map"
   },
   "devDependencies": {
     "vite": "^7.1.7"
