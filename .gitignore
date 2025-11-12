@@ -9,7 +9,6 @@ lerna-debug.log*
 
 # Ignorer tous les fichiers CSS compilés,
 *.css
-*.css.map
 
 # Ignorer tous les fichiers .map
 *.map
