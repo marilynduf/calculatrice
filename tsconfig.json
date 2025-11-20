@@ -43,6 +43,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "include": ["src/scripts/main.js"],
+  "include": ["src"],
   "exclude": ["dist", "node_modules"]
 }
