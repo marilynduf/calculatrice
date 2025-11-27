@@ -10,7 +10,7 @@ TODO : Mettre css et scss dans differents dossiers
 */
 
 const screen = document.getElementById("screen") as HTMLElement; // Balise html qui affiche les inputs du user
-const littleScreen = document.getElementById("little-screen"); // Balise html qui affiche l'espression entrée par le user (quand "=" est cliqué)
+const littleScreen = document.getElementById("little-screen") as HTMLElement; // Balise html qui affiche l'espression entrée par le user (quand "=" est cliqué)
 const buttons = document.querySelectorAll("button");
 screen.textContent = "0";
 
@@ -20,16 +20,16 @@ const isNumber = (val: string) => /[0-9]/.test(val);
 /* Vérifie si la valeur entrée est un opérateur valide de la calculatrice */
 const isOperator = (val: string) => /^[/*+\-]$/.test(val);
 /* Vérifie si le dernier caractere est un operateur */
-const isLastOperator = (val: string) => isOperator(val[val.length - 1]);
+const isLastOperator = (val: string) => isOperator(val[val.length - 1] ?? '');
 /* Affiche les nombres et opérateurs choisis par le user à l'écran */
 const displayInputs = (expression: string) => (screen.textContent += expression);
 const removeLastKeyEntered = () => {
-    const screenValue = screen.textContent;
+    const screenValue = screen.textContent ?? '';
     screen.textContent = screenValue.slice(0, -1);
 };
 
-function handleUserInput(userInput) {
-    const content = screen.textContent;
+function handleUserInput(userInput: string) {
+    const content: string = screen.textContent ?? '';
     /**
      * Logique :
      * - Si input est un chiffre ET
@@ -91,7 +91,7 @@ function handleUserInput(userInput) {
     }
 }
 
-function isAllowedKeys(key) {
+function isAllowedKeys(key: string) {
     const allowedKeys = "0123456789+-*/=";
     const isKeyAllowed = allowedKeys.includes(key);
     if (isKeyAllowed || key === "=" || key === "Backspace") {
@@ -102,7 +102,7 @@ window.addEventListener("keydown", (e) => {
     const key = e.key === "Enter" ? "=" : e.key; // Standardise la touche "=" et "Enter"
     if (!isAllowedKeys(key)) return;
     if (e.repeat) return; // Empeche la touche de rester "stick" sur le clavier
-    const button = document.querySelector(`[data-val="${key}"]`);
+    const button = document.querySelector(`[data-val="${key}"]`) as HTMLElement;
     button.classList.add("keydown-active");
     handleUserInput(key);
 });
@@ -111,12 +111,12 @@ window.addEventListener("keyup", (e) => {
     const key = e.key === "Enter" ? "=" : e.key;
     if (!isAllowedKeys(key)) return;
     if (e.repeat) return; //Empeche la touche de rester "stick" sur le clavier
-    const button = document.querySelector(`[data-val="${key}"]`);
+    const button = document.querySelector(`[data-val="${key}"]`) as HTMLElement;
     button.classList.remove("keydown-active");
 });
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        handleUserInput(button.dataset.val);
+        handleUserInput(button.dataset.val ?? '');
     });
 });
