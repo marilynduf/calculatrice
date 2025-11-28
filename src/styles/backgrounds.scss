@@ -1,0 +1,62 @@
+@property --color-1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #39f;
+}
+
+@property --color-2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #f4e54d;
+}
+
+@property --color-3 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #fa3;
+}
+
+@keyframes bgAnimation {
+    0% {
+        left: -10%;
+        rotate: -50deg;
+        transform: scale(1, 1);
+    }
+    50% {
+        left: 80%;
+        rotate: 50deg;
+    }
+    80% {
+        transform: scale(1.2, 1.5);
+    }
+    100% {
+        left: -10%;
+        rotate: -50deg;
+        transform: scale(1, 1);
+    }
+}
+
+.gradient-bg {
+    background: linear-gradient(
+        145deg,
+        var(--color-1) 0%,
+        var(--color-2) 50%,
+        var(--color-3) 100%
+    );
+    height: 100vh;
+    &::before {
+        animation: bgAnimation 15s infinite reverse;
+        position: absolute;
+        content: "";
+
+        right: 10%;
+        height: 40%;
+        width: 60%;
+        min-width: 300px;
+        min-height: 300px;
+        transform-origin: 60%;
+        background-color: #f56977;
+        border-radius: 50%;
+        filter: blur(70px) brightness(200%);
+    }
+}

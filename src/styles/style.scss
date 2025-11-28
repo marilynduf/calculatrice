@@ -7,12 +7,10 @@ body {
     font-family: "Bricolage Grotesque", sans-serif;
     justify-content: center; /* Centrage horizontal */
     align-items: center;
-    background-color: #e6ffc2;
 }
 .grainyBg {
     /* resulting css */
     width: 250px;
-    height: 250px;
     filter: contrast(170%) brightness(1000%);
     background: linear-gradient(
             21deg,
@@ -39,17 +37,12 @@ section {
     text-align: center;
 }
 
-.poster {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-}
+// .poster {
+//     width: 100%;
+//     height: 100%;
+//     text-align: center;
+// }
 
-/* EFFET GRAIN / RUMEUR */
-.poster::before {
-    content: "";
-    position: absolute;
-}
 .originalBox {
     width: 270px;
     border: 2px solid black;

@@ -1,4 +1,5 @@
 import "../styles/style.scss";
+import "../styles/backgrounds.scss";
 import "../styles/buttons.scss";
 // import "./funkyBoxes";
 
