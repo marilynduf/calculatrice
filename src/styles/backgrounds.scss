@@ -1,7 +1,7 @@
 @property --color-1 {
     syntax: "<color>";
     inherits: true;
-    initial-value: #39f;
+    initial-value: #3399ff;
 }
 
 @property --color-2 {
@@ -13,50 +13,70 @@
 @property --color-3 {
     syntax: "<color>";
     inherits: true;
-    initial-value: #fa3;
+    initial-value: #ffaa33;
 }
 
 @keyframes bgAnimation {
     0% {
         left: -10%;
+        top: -10%;
         rotate: -50deg;
         transform: scale(1, 1);
     }
     50% {
         left: 80%;
-        rotate: 50deg;
-    }
-    80% {
+        rotate: 20deg;
+        top: 100%;
         transform: scale(1.2, 1.5);
     }
     100% {
         left: -10%;
+        top: -10%;
         rotate: -50deg;
         transform: scale(1, 1);
     }
 }
 
 .gradient-bg {
-    background: linear-gradient(
-        145deg,
-        var(--color-1) 0%,
-        var(--color-2) 50%,
-        var(--color-3) 100%
-    );
+    background-color: hsla(210, 100%, 60%, 1);
+    // background créé sur https://csshero.org/mesher/
+    background-image: radial-gradient(
+            at 23% 100%,
+            hsla(51, 64%, 73%, 1) 0px,
+            transparent 50%
+        ),
+        radial-gradient(at 1% 1%, hsla(210, 100%, 60%, 1) 0px, transparent 50%),
+        radial-gradient(at 49% 98%, hsla(54, 88%, 62%, 1) 0px, transparent 50%),
+        radial-gradient(at 98% 22%, hsla(54, 88%, 62%, 1) 0px, transparent 50%),
+        radial-gradient(at 96% 95%, hsla(33, 100%, 59%, 1) 0px, transparent 50%),
+        radial-gradient(at 94% 57%, hsla(33, 100%, 59%, 1) 0px, transparent 50%);
     height: 100vh;
     &::before {
-        animation: bgAnimation 15s infinite reverse;
+        animation: bgAnimation 15s infinite;
         position: absolute;
         content: "";
-
         right: 10%;
-        height: 40%;
-        width: 60%;
+        height: 50%;
+        width: 70%;
         min-width: 300px;
         min-height: 300px;
         transform-origin: 60%;
-        background-color: #f56977;
+        background-color: #39f;
         border-radius: 50%;
-        filter: blur(70px) brightness(200%);
+        filter: blur(70px) brightness(120%) opacity(0.7);
+    }
+    &::after {
+        animation: bgAnimation 15s infinite reverse;
+        position: absolute;
+        content: "";
+        right: 10%;
+        height: 70%;
+        width: 50%;
+        min-width: 300px;
+        min-height: 300px;
+        transform-origin: 60%;
+        background-color: #39f;
+        border-radius: 50%;
+        filter: blur(70px) brightness(120%) opacity(0.7);
     }
 }
