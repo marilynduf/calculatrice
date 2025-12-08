@@ -22,39 +22,39 @@
         top: -10%;
         rotate: -50deg;
         transform: scale(1, 1);
+        width: 50%;
     }
     50% {
         left: 80%;
         rotate: 20deg;
         top: 100%;
         transform: scale(1.2, 1.5);
+        width: 100%;
     }
     100% {
         left: -10%;
         top: -10%;
         rotate: -50deg;
         transform: scale(1, 1);
+        width: 50%;
     }
 }
 
 .gradient-bg {
     position: fixed;
     width: 100vw;
-    background-color: hsla(210, 100%, 60%, 1);
+    background-color: #271824;
+    //background: url("../images/grainy-back-texture.jpeg");
     // background créé sur https://csshero.org/mesher/
-    background-image: radial-gradient(
-            at 23% 100%,
-            hsla(51, 64%, 73%, 1) 0px,
-            transparent 50%
-        ),
-        radial-gradient(at 1% 1%, hsla(210, 100%, 60%, 1) 0px, transparent 50%),
-        radial-gradient(at 49% 98%, hsla(54, 88%, 62%, 1) 0px, transparent 50%),
-        radial-gradient(at 98% 22%, hsla(54, 88%, 62%, 1) 0px, transparent 50%),
-        radial-gradient(at 96% 95%, hsla(33, 100%, 59%, 1) 0px, transparent 50%),
-        radial-gradient(at 94% 57%, hsla(33, 100%, 59%, 1) 0px, transparent 50%);
+    background-image: radial-gradient(at 23% 100%, #0f0f0f, transparent 50%),
+        radial-gradient(at 1% 1%, #271824, 0px, transparent 50%),
+        radial-gradient(at 49% 98%, #462b40 0px, transparent 50%),
+        radial-gradient(at 98% 22%, #0f0a0d 0px, transparent 50%),
+        radial-gradient(at 96% 95%, #462b40 0px, transparent 50%),
+        radial-gradient(at 94% 57%, #462b40 0px, transparent 50%);
     height: 100vh;
     &::before {
-        animation: bgAnimation 15s infinite;
+        animation: bgAnimation 20s infinite;
         position: absolute;
         content: "";
         right: 10%;
@@ -63,12 +63,12 @@
         min-width: 300px;
         min-height: 300px;
         transform-origin: 60%;
-        background-color: #39f;
+        background-color: #462b40;
         border-radius: 50%;
-        filter: blur(70px) brightness(120%) opacity(0.7);
+        filter: blur(70px) brightness(120%) opacity(0.3);
     }
     &::after {
-        animation: bgAnimation 15s infinite reverse;
+        animation: bgAnimation 20s infinite reverse;
         position: absolute;
         content: "";
         right: 10%;
@@ -77,32 +77,8 @@
         min-width: 300px;
         min-height: 300px;
         transform-origin: 60%;
-        background-color: #39f;
+        background-color: #462b40;
         border-radius: 50%;
-        filter: blur(70px) brightness(120%) opacity(0.7);
+        filter: blur(70px) brightness(120%) opacity(0.3);
     }
-}
-.grainyBg {
-    /* resulting css */
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    filter: contrast(170%) brightness(1000%);
-    background: linear-gradient(
-            21deg,
-            rgba(0, 0, 0, 0.59),
-            rgba(1, 59, 247, 0.12)
-        ),
-        linear-gradient(190deg, rgba(86, 11, 12, 0.5), rgba(0, 0, 255, 0)),
-        radial-gradient(
-            circle at 67% 24%,
-            rgba(255, 105, 0, 0.54),
-            rgba(255, 0, 0, 0)
-        ),
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(31, 44, 44, 0.31),
-            rgba(0, 0, 255, 0)
-        ),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 239 239' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='7.18' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

@@ -1,14 +1,15 @@
-$hoverColor: rgb(255, 85, 0);
+$hoverColor: #ff58a1;
 button {
     font-family: "Bricolage Grotesque", sans-serif;
-    background-color: #e91e63;
-    padding: 10px;
+    background-color: transparent;
     border-radius: 4px;
     transition: 0.1s ease-out;
-    height: 60px;
+    height: 43px;
+    width: 60px;
     font-size: 30px;
-    border: 2px solid black;
-    box-shadow: 6px 6px 0 black;
+    border: none;
+    box-shadow: 6px 6px 0 #ce3c7c;
+
     cursor: pointer;
     &:hover {
         background-color: $hoverColor;

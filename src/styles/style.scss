@@ -1,5 +1,5 @@
-$hoverColor: rgb(255, 85, 0);
-$activeColor: yellow;
+$hoverColor: #ff58a1;
+$activeColor: #7d5775;
 body {
     margin: 0;
     height: 100%;
@@ -21,15 +21,24 @@ section {
 }
 .originalBox {
     width: 270px;
-    border: 2px solid black;
-    border-radius: 4px;
+    background-color: #3d2738;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 #title {
-    font-size: 50px;
+    font-size: 160px;
+    line-height: 140px;
     font-weight: 400;
     margin-top: 0px;
+    margin-bottom: 15px;
     text-align: center;
+    color: #e84c90;
+    @media (max-width: 500px) {
+        font-size: 100px;
+        line-height: 90px;
+    }
 }
 
 .box {
@@ -56,20 +65,19 @@ section {
     overflow: auto;
 }
 #calculator {
+    margin-bottom: 92px;
     .calculator-keyboard {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-direction: row-reverse;
-        button {
-            width: 60px;
-        }
+
         .operators {
             display: flex;
             flex-direction: column;
             button {
-                background-color: #e6ffc2;
                 margin-bottom: 10px;
                 transition: 0.1s ease-out;
+
                 &:hover {
                     background-color: $hoverColor;
                 }
@@ -98,15 +106,13 @@ section {
 #add {
     padding-bottom: 3px;
 }
-.equal {
-    background-color: #e6ffc2;
-}
 #little-screen {
     text-align: right;
     font-size: 18px;
     width: 100%;
     height: 20px;
     overflow: hidden;
+    //color: #ff8c62;
 }
 .BS {
     img {
@@ -118,4 +124,58 @@ section {
     button {
         margin-right: 5px;
     }
+}
+.starburst {
+    height: auto;
+    width: 500px; /* adjust to control the size */
+    background-color: #e84c90;
+    aspect-ratio: 1;
+    clip-path: polygon(
+        100% 50%,
+        83.68% 54.63%,
+        98.15% 63.49%,
+        81.19% 63.55%,
+        92.72% 75.98%,
+        76.37% 71.46%,
+        84.13% 86.54%,
+        69.61% 77.78%,
+        73% 94.39%,
+        61.39% 82.04%,
+        60.17% 98.95%,
+        52.32% 83.92%,
+        46.59% 99.88%,
+        43.08% 83.29%,
+        33.26% 97.11%,
+        34.36% 80.19%,
+        21.17% 90.85%,
+        26.79% 74.85%,
+        11.21% 81.55%,
+        20.95% 67.67%,
+        4.14% 69.92%,
+        17.26% 59.17%,
+        0.47% 56.81%,
+        16% 50%,
+        0.47% 43.19%,
+        17.26% 40.83%,
+        4.14% 30.08%,
+        20.95% 32.33%,
+        11.21% 18.45%,
+        26.79% 25.15%,
+        21.17% 9.15%,
+        34.36% 19.81%,
+        33.26% 2.89%,
+        43.08% 16.71%,
+        46.59% 0.12%,
+        52.32% 16.08%,
+        60.17% 1.05%,
+        61.39% 17.96%,
+        73% 5.61%,
+        69.61% 22.22%,
+        84.13% 13.46%,
+        76.37% 28.54%,
+        92.72% 24.02%,
+        81.19% 36.45%,
+        98.15% 36.51%,
+        83.68% 45.37%
+    );
 }
