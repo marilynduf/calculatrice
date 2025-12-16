@@ -13,64 +13,62 @@
         <title>calculator-app</title>
         <script type="module" src="/src/scripts/main.ts" defer></script>
     </head>
-
-    <body id="app">
+    <body id="app" class="grainyBg2">
         <div class="gradient-bg"></div>
-        <div class="poster">
-            <h1 style="z-index: 9" id="title">Calculatrice funky</h1>
-            <section class="originalBox starburst">
-                <div id="calculator">
-                    <!-- <input  type="number" /> -->
-                    <div id="little-screen"></div>
-                    <div class="screen-container">
-                        <div id="screen"></div>
+        <h1 class="title">Calculatrice<br />funky</h1>
+        <section class="originalBox">
+            <div class="starburst-container">
+                <div class="starburst"></div>
+            </div>
+            <div id="calculator">
+                <div id="little-screen"></div>
+                <div class="screen-container">
+                    <div id="screen"></div>
+                </div>
+                <div class="calculator-keyboard">
+                    <div class="operators">
+                        <button data-val="+">+</button>
+                        <button data-val="-">-</button>
+                        <button data-val="*" class="multiplier">*</button>
+                        <button data-val="/">/</button>
+                        <button class="equal" data-val="=">=</button>
                     </div>
-                    <div class="calculator-keyboard">
-                        <div class="operators">
-                            <button data-val="+">+</button>
-                            <button data-val="-">-</button>
-                            <button data-val="*" class="multiplier">*</button>
-                            <button data-val="/">/</button>
-                            <button class="equal" data-val="=">=</button>
+                    <div>
+                        <div class="numbers">
+                            <div class="row">
+                                <button data-val="7">7</button>
+                                <button data-val="8">8</button>
+                                <button data-val="9">9</button>
+                            </div>
+                            <div class="row">
+                                <button data-val="4">4</button>
+                                <button data-val="5">5</button>
+                                <button data-val="6">6</button>
+                            </div>
+                            <div class="row">
+                                <button data-val="1">1</button>
+                                <button data-val="2">2</button>
+                                <button data-val="3">3</button>
+                            </div>
                         </div>
-                        <div>
-                            <div class="numbers">
-                                <div class="row">
-                                    <button data-val="7">7</button>
-                                    <button data-val="8">8</button>
-                                    <button data-val="9">9</button>
-                                </div>
-                                <div class="row">
-                                    <button data-val="4">4</button>
-                                    <button data-val="5">5</button>
-                                    <button data-val="6">6</button>
-                                </div>
-                                <div class="row">
-                                    <button data-val="1">1</button>
-                                    <button data-val="2">2</button>
-                                    <button data-val="3">3</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <button data-val="%">%</button>
-                                <button data-val="0">0</button>
-                                <button class="Backspace" data-val="Backspace">
-                                    <img
-                                        src="./src/images/BS-arrow.svg"
-                                        alt="flèche retour arrière"
-                                    />
-                                </button>
-                            </div>
-                            <div class="row">
-                                <button data-val="effacer" class="effacer">
-                                    Tout effacer
-                                </button>
-                            </div>
+                        <div class="row">
+                            <button data-val="%">%</button>
+                            <button data-val="0">0</button>
+                            <button class="Backspace" data-val="Backspace">
+                                <img
+                                    src="./src/images/BS-arrow.svg"
+                                    alt="flèche retour arrière"
+                                />
+                            </button>
+                        </div>
+                        <div class="row">
+                            <button data-val="effacer" class="effacer">
+                                Tout effacer
+                            </button>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
-        <div id="grainyBg"></div>
+            </div>
+        </section>
     </body>
 </html>

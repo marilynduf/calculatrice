@@ -1,7 +1,7 @@
-$hoverColor: #ff58a1;
+@import "variables";
 button {
     font-family: "Bricolage Grotesque", sans-serif;
-    background-color: transparent;
+    background-color: $primaryColor;
     border-radius: 4px;
     transition: 0.1s ease-out;
     height: 43px;
@@ -17,11 +17,11 @@ button {
     &:active {
         box-shadow: 4px 4px 0 black;
         transform: translate(2px, 2px);
-        background-color: yellow;
+        background-color: $activeColor;
     }
     &.keydown-active {
         box-shadow: 4px 4px 0 black;
         transform: translate(2px, 2px);
-        background-color: yellow;
+        background-color: $activeColor;
     }
 }

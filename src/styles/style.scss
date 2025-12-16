@@ -1,40 +1,36 @@
-$hoverColor: #ff58a1;
-$activeColor: #7d5775;
+@import "variables";
+
 body {
-    margin: 0;
+    margin: 0 auto;
     height: 100%;
     width: 100%;
     font-family: "Bricolage Grotesque", sans-serif;
-    justify-content: center; /* Centrage horizontal */
-    align-items: center;
 }
 
 .poster {
     padding: 50px;
     position: relative;
     z-index: 1;
-}
-section {
-    padding: 30px;
-    margin: auto;
-    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 .originalBox {
     width: 270px;
-    background-color: #3d2738;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    position: relative;
+    margin: auto;
 }
 
-#title {
+.title {
     font-size: 160px;
     line-height: 140px;
     font-weight: 400;
     margin-top: 0px;
     margin-bottom: 15px;
     text-align: center;
-    color: #e84c90;
+    overflow-wrap: break-word;
+    padding: 20px;
+    color: $primaryColor;
+
     @media (max-width: 500px) {
         font-size: 100px;
         line-height: 90px;
@@ -65,7 +61,8 @@ section {
     overflow: auto;
 }
 #calculator {
-    margin-bottom: 92px;
+    position: relative;
+    top: 60px;
     .calculator-keyboard {
         display: flex;
         justify-content: center;
@@ -112,7 +109,6 @@ section {
     width: 100%;
     height: 20px;
     overflow: hidden;
-    //color: #ff8c62;
 }
 .BS {
     img {
@@ -127,8 +123,8 @@ section {
 }
 .starburst {
     height: auto;
-    width: 500px; /* adjust to control the size */
-    background-color: #e84c90;
+    width: 500px;
+    background-color: $primaryColor;
     aspect-ratio: 1;
     clip-path: polygon(
         100% 50%,

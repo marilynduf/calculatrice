@@ -41,20 +41,20 @@
 }
 
 .gradient-bg {
+    mix-blend-mode: difference;
     position: fixed;
     width: 100vw;
-    background-color: #271824;
-    //background: url("../images/grainy-back-texture.jpeg");
+    background-color: #1a1218;
     // background créé sur https://csshero.org/mesher/
     background-image: radial-gradient(at 23% 100%, #0f0f0f, transparent 50%),
         radial-gradient(at 1% 1%, #271824, 0px, transparent 50%),
         radial-gradient(at 49% 98%, #462b40 0px, transparent 50%),
         radial-gradient(at 98% 22%, #0f0a0d 0px, transparent 50%),
-        radial-gradient(at 96% 95%, #462b40 0px, transparent 50%),
+        radial-gradient(at 96% 95%, #331f2f 0px, transparent 50%),
         radial-gradient(at 94% 57%, #462b40 0px, transparent 50%);
     height: 100vh;
     &::before {
-        animation: bgAnimation 20s infinite;
+        animation: bgAnimation 20s linear infinite;
         position: absolute;
         content: "";
         right: 10%;
@@ -81,4 +81,34 @@
         border-radius: 50%;
         filter: blur(70px) brightness(120%) opacity(0.3);
     }
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.starburst,
+.shadow-starburst {
+    animation: turn 130s linear infinite;
+    position: absolute;
+    left: calc(50% - 250px);
+}
+.grainyBg2 {
+    background: url("../images/bg-grainy-dark-purple.jpeg");
+    margin: 0;
+    padding: 0;
+    background-size: cover; /* L’image couvre toujours tout l’écran */
+    background-position: center; /* Centrée même si elle se recadre */
+    background-attachment: fixed;
+    height: 100vh;
+}
+.bg-test {
+    background-color: #0f0f0f;
+    width: 100%;
+    height: 100%;
 }
