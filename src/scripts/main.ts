@@ -17,14 +17,14 @@ screen.textContent = "0";
 
 // Fonctions Utilitaires :
 /* Vérifie si la valeur entrée est un nombre */
-const isNumber = (val: string) => /[0-9]/.test(val);
+const isNumber = (val: string): boolean => /[0-9]/.test(val);
 /* Vérifie si la valeur entrée est un opérateur valide de la calculatrice */
-const isOperator = (val: string) => /^[/*+\-]$/.test(val);
+const isOperator = (val: string): boolean => /^[/*+\-]$/.test(val);
 /* Vérifie si le dernier caractere est un operateur */
-const isLastOperator = (val: string) => isOperator(val[val.length - 1] ?? '');
+const isLastOperator = (val: string): boolean => isOperator(val[val.length - 1] ?? '');
 /* Affiche les nombres et opérateurs choisis par le user à l'écran */
-const displayInputs = (expression: string) => (screen.textContent += expression);
-const removeLastKeyEntered = () => {
+const displayInputs = (expression: string): string => (screen.textContent += expression);
+const removeLastKeyEntered = ():void => {
     const screenValue = screen.textContent ?? '';
     screen.textContent = screenValue.slice(0, -1);
 };
